@@ -7,10 +7,6 @@ class Shape:
     def move(self, delta_x, delta_y):
         self.x = self.x + delta_x
         self.y = self.y + delta_y
-        # print(f'Shape move local namespace:{locals()}')
-
-    print(f'Shape class namespace:{locals()}')
-
 
 
 class Circle(Shape):
@@ -22,13 +18,11 @@ class Circle(Shape):
         print(f'Circle __init__ local namespace:{locals()}')
 
     def area(self):
-        # print(f'Circle area local namespace:{locals()}')
-        # print(f'Circle area global namespace:{list(globals())}')
-        return self.__class__.PI * self.radius * self.radius
-
-    print(f'Circle class namespace:{locals()}')
-    print(f'Circle class namespace:{globals()}')
+        print(f'Circle area local namespace:{locals()}')
+        return self.PI * self.radius * self.radius
 
 
 
-print(f'shape module global namespace:{list(globals())}')
+
+
+
